@@ -20,6 +20,7 @@ class CreateSalesrepTable extends Migration
             $table->float('commission_percentage',6,2);
             $table->float('tax_rate',6,2);
             $table->float('bonuses',6,2);
+            $table->boolean('is_deleted')->default(false);
             $table->timestamps();
         });
     }

@@ -19,6 +19,7 @@ class CreatePayrollTable extends Migration
             $table->date('start_period');
             $table->date('end_period');
             $table->integer('clients');
+            $table->float('commission',6,2)
             $table->timestamps();
         });
     }
