@@ -5,3 +5,21 @@
 .select2-container--default .select2-selection--single {
     border: 1px solid #dadfe3 !important;
 }
+
+.navbar-brand {
+    max-width: 200px;
+}
+@media only screen and (max-width: 1440px){
+
+.login-card {
+ margin-top: 100px;
+}
+}
+
+@media only screen and (max-width: 768px) {
+
+    .login-card {
+        margin-top: 50px;
+    }
+
+  }
