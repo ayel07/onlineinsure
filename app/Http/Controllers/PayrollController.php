@@ -59,8 +59,8 @@ class PayrollController extends Controller
         }
 
         // dd($data);
-        return view('pdf.payroll', $data);
-        // $pdf = PDF::loadView('pdf.payroll', $data);
-        // return $pdf->stream('invoice.pdf');
+        // return view('pdf.payroll', $data);
+        $pdf = PDF::loadView('pdf.payroll', $data);
+        return $pdf->stream('invoice.pdf');
     }
 }
