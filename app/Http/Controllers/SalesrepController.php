@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Salesrep;
+use Session;
 
 class SalesrepController extends Controller
 {
@@ -37,5 +38,13 @@ class SalesrepController extends Controller
             $salesrep->save();
             return redirect("/salesreps");
         }
+    }
+
+    function delete($id){
+        $salesrep = Salesrep::where('id',$id)->first();
+        $salesrep->is_deleted = true;
+        $salesrep->save();
+        Session::put('status', "Succesfully deleted");
+        return redirect("/salesreps");
     }
 }

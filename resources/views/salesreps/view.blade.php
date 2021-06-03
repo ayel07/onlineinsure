@@ -12,6 +12,7 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
+                        {{ Session::remove('status') }};
                     @endif
 
                     <table class="table table-bordered table-striped" id="basic-datatable">
@@ -35,7 +36,7 @@
                             <td>{{ $rep->tax_rate }}%</td>
                             <td>${{ $rep->bonuses }}</td>
                             <td>{{ date("d/m/Y g:i a",strtotime($rep->created_at)) }}</td>
-                            <td><a href="/salesreps/{{ $rep->id }}/delete" class="btn btn-danger btn-xs">Delete</a></td>
+                            <td><a href="/salesreps/{{ $rep->id }}/delete" class="btn btn-danger btn-xs delete">Delete</a></td>
 
                         </tr>
                         @endforeach
@@ -51,5 +52,14 @@
 @section('script')
 	<script>
 		$("#basic-datatable").DataTable();
+
+        $('.delete').click(function(e) {
+            e.preventDefault();
+            var con = confirm("Are you sure you want to delete this sales rep?");
+            if (con==true)   {
+                window.location = $(this).attr('href');
+            }
+
+        });
 	</script>
 @stop

@@ -20,6 +20,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/salesreps', [App\Http\Controllers\SalesrepController::class, 'index'])->name('salesrep_view');
     Route::get('/salesreps/add', [App\Http\Controllers\SalesrepController::class, 'addform'])->name('salesrep_add');
     Route::post('/salesreps/add', [App\Http\Controllers\SalesrepController::class, 'add'])->name('salesrep_save');
+    Route::get('/salesreps/{id}/delete', [App\Http\Controllers\SalesrepController::class, 'delete'])->name('salesrep_delete');
 
     Route::get('/payroll', [App\Http\Controllers\PayrollController::class, 'index'])->name('payroll');
     Route::post('/payroll', [App\Http\Controllers\PayrollController::class, 'generate'])->name('payroll_generate');
