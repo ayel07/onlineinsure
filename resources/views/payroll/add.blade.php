@@ -133,7 +133,7 @@
                 var startCount = isNaN(parseInt(clientsPrev)) ? 1 : parseInt(clientsPrev) + 1;
                 var clientDivs = "";
                 for(var x = startCount; x <= numberOfClients; x++){
-                    clientDivs += '<div class="client-divs"><hr/><div class="form-group row"><div class="col">Client '+ (parseInt(x)) +'</div></div><div class="form-group row"><div class="col-md-4"><label for="cfirstname">First Name</label><input name="cfirstname[]" type="text" class="form-control" required></div><div class="col-md-4"><label for="clastname">Last Name</label><input name="clastname[]" type="text" class="form-control" required></div><div class="col-md-4"><label for="cemail">Email</label><input name="cemail[]" type="text" class="form-control" required></div></div></div>';
+                    clientDivs += '<div class="client-divs"><hr/><div class="form-group row"><div class="col">Client '+ (parseInt(x)) +'</div></div><div class="form-group row"><div class="col-md-4"><label for="cfirstname">First Name</label><input name="cfirstname[]" type="text" class="form-control" required></div><div class="col-md-4"><label for="clastname">Last Name</label><input name="clastname[]" type="text" class="form-control" required></div><div class="col-md-4"><label for="cemail">Email</label><input name="cemail[]" type="email" class="form-control" required></div></div></div>';
                 }
                 $('#thisBlock').append(clientDivs);
             } else {
@@ -141,7 +141,7 @@
                 $('.client-divs').remove();
                 var clientDivs = "";
                 for(var x = 1; x <= numberOfClients; x++){
-                    clientDivs += '<div class="client-divs"><hr/><div class="form-group row"><div class="col">Client '+ (parseInt(x)) +'</div></div><div class="form-group row"><div class="col-md-4"><label for="cfirstname">First Name</label><input name="cfirstname[]" type="text" class="form-control" required></div><div class="col-md-4"><label for="clastname">Last Name</label><input name="clastname[]" type="text" class="form-control" required></div><div class="col-md-4"><label for="cemail">Email</label><input name="cemail[]" type="text" class="form-control" required></div></div></div>';
+                    clientDivs += '<div class="client-divs"><hr/><div class="form-group row"><div class="col">Client '+ (parseInt(x)) +'</div></div><div class="form-group row"><div class="col-md-4"><label for="cfirstname">First Name</label><input name="cfirstname[]" type="text" class="form-control" required></div><div class="col-md-4"><label for="clastname">Last Name</label><input name="clastname[]" type="text" class="form-control" required></div><div class="col-md-4"><label for="cemail">Email</label><input name="cemail[]" type="email" class="form-control" required></div></div></div>';
                 }
                 $('#thisBlock').append(clientDivs);
             }

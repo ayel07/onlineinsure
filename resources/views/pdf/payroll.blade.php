@@ -30,6 +30,12 @@
       .underline {
         text-decoration: underline;
       }
+      .pdetail-3 {
+          width: 33%;
+      }
+      .pdetail-2 {
+          width: 50%;
+      }
   </style>
 
 </head>
@@ -41,12 +47,21 @@
             <h2>Payroll Statement</h2>
         </div>
         <div class="borderline">
-            <span class="text-left">SALES REP: {{ @$salesrep->firstname }} {{ @$salesrep->lastname }}</span>
+            <span class="text-left">SALES REP: {{ @$salesrep['firstname'] }} {{ @$salesrep['lastname'] }}</span>
             <span class="text-right">{{ @$date_period }}</span>
         </div>
-        <div class="inline">
-            <p class="underline">Produced on:</p>
+        <div class="details">
+            <div class="pdetail-3">
+                <div class="pdetail-2">
+                    <p class="underline">Produced on:</p>
+                </div>
+                <div class="pdetail-2">
+                    <p>{{ date('d/m/Y', strtotime($created_at)) }}</p>
+                </div>
+
+            </div>
         </div>
+
     </div>
 </body>
 </html>

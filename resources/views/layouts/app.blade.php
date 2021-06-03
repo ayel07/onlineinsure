@@ -63,7 +63,7 @@
                                 <a class="nav-link" href="{{ route('payroll') }}">{{ __('Create Payroll') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">{{ __('PDFs') }}</a>
+                                <a class="nav-link" href="{{ route('pdf_list') }}">{{ __('PDFs') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>

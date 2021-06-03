@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Sales Representatives') }}</div>
+                <div class="card-header">{{ __('Payroll Statements') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -17,25 +17,21 @@
                     <table class="table table-bordered table-striped" id="basic-datatable">
                         <thead>
                         <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Commission Percentage</th>
-                            <th>Tax Rate</th>
-                            <th>Bonuses</th>
+                            <th>ID</th>
+                            <th>Sales Rep</th>
+                            <th>Date Period</th>
                             <th>Date Created</th>
                             <th></th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($salesReps as $rep)
+                        @foreach($payrolls as $payroll)
                         <tr>
-                            <td>{{ $rep->firstname }}</td>
-                            <td>{{ $rep->lastname }}</td>
-                            <td>{{ $rep->commission_percentage }}%</td>
-                            <td>{{ $rep->tax_rate }}%</td>
-                            <td>${{ $rep->bonuses }}</td>
-                            <td>{{ date("d/m/Y g:i a",strtotime($rep->created_at)) }}</td>
-                            <td><a href="/salesreps/{{ $rep->id }}/delete" class="btn btn-danger btn-xs">Delete</a></td>
+                            <td>{{ $payroll->id }}</td>
+                            <td>{{ $payroll->salesrep->firstname }} {{ $payroll->salesrep->lastname }}</td>
+                            <td>{{ date('m/d/Y', strtotime($payroll->start_period)) . "-" . date('m/d/Y', strtotime($payroll->end_period)) }}</td>
+                            <td>{{ date("m/d/Y g:i a",strtotime($payroll->created_at)) }}</td>
+                            <td><a href="/payroll/{{ $payroll->id }}" class="btn btn-primary btn-xs">View PDF</a></td>
 
                         </tr>
                         @endforeach

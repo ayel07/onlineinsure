@@ -6,6 +6,10 @@
     border: 1px solid #dadfe3 !important;
 }
 
+.btn-primary {
+    background-color: #1D1665;
+}
+
 .navbar-brand {
     max-width: 200px;
 }

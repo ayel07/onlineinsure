@@ -27,7 +27,7 @@ class Payroll extends Model
     /**
      * Get the clients associated with this payroll.
      */
-    public function payrolls()
+    public function clients()
     {
         return $this->hasMany(PayrollClient::class, 'payroll_id');
     }

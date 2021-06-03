@@ -23,6 +23,9 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/payroll', [App\Http\Controllers\PayrollController::class, 'index'])->name('payroll');
     Route::post('/payroll', [App\Http\Controllers\PayrollController::class, 'generate'])->name('payroll_generate');
+    Route::get('/payroll/{id}', [App\Http\Controllers\PayrollController::class, 'pdf'])->name('payroll_pdf');
+
+    Route::get('/pdf', [App\Http\Controllers\PayrollController::class, 'list'])->name('pdf_list');
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
