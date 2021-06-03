@@ -29,7 +29,7 @@
                         <tr>
                             <td>{{ $payroll->id }}</td>
                             <td>{{ $payroll->salesrep->firstname }} {{ $payroll->salesrep->lastname }}</td>
-                            <td>{{ date('m/d/Y', strtotime($payroll->start_period)) . "-" . date('m/d/Y', strtotime($payroll->end_period)) }}</td>
+                            <td>{{ date('m/d/Y', strtotime($payroll->start_period)) }} - {{ date('m/d/Y', strtotime($payroll->end_period)) }}</td>
                             <td>{{ date("m/d/Y g:i a",strtotime($payroll->created_at)) }}</td>
                             <td><a href="/payroll/{{ $payroll->id }}" class="btn btn-primary btn-xs">View PDF</a></td>
 
