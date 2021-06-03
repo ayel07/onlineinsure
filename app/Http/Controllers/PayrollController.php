@@ -91,7 +91,12 @@ class PayrollController extends Controller
             $end = $payroll->end_period;
             $data = $payroll->toArray();
             $data['date_period'] = date('m/d/Y', strtotime($start)) . "-" . date('m/d/Y', strtotime($end));
-            return view('pdf.payroll', $data);
+            $data['nett'] = ($payroll->commission * $payroll->salesrep->commission_percentage)/100;
+            $data['tax'] = ($data['nett'] * $payroll->salesrep->tax_rate)/100;
+            $data['total_payment'] = $data['nett'] - $data['tax'];
+            // return view('pdf.payroll', $data);
+            $pdf = PDF::loadView('pdf.payroll', $data);
+            return $pdf->stream('invoice.pdf');
         }
 
     }
