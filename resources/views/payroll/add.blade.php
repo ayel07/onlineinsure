@@ -100,7 +100,8 @@
             }],
             locale: {
                 firstDayOfWeek: 1
-            }
+            },
+            disableMobile: true
         });
         $('.flatpickr-input:visible').on('focus', function () {
             $(this).blur()

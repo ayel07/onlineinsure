@@ -8,8 +8,8 @@
 
   <style>
       @page {
-        margin:20;
-        padding:20;
+        margin:20px;
+        padding:20px;
       }
       body {
         font-family: 'Helvetica';
@@ -229,7 +229,7 @@
         </div>
         <div class="borderline">
             <span class="text-left">SALES REP: {{ @$salesrep['firstname'] }} {{ @$salesrep['lastname'] }}</span>
-            <span style="position:absolute; margin-left: 250px;">{{ @$date_period }}</span>
+            <span style="position:absolute; margin-left: 210px;">{{ @$date_period }}</span>
         </div>
 
 
